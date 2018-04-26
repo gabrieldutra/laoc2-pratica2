@@ -82,6 +82,6 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
 	regn reg6 (BusWires, Rin[6], Clock, R[6]);
 	regn reg7 (BusWires, Rin[7], Clock, R[7]);	
 	
-	assign BusWires = {8{Rout[0]}} & R[0] | {8{Rout[1]}} & R[1] {8{Rout[2]}} & R[2] | {8{Rout[3]}} & R[3] |
-		{8{Rout[4]}} & R[4] | {8{Rout[5]}} & R[5] | {8{Rout[6]}} & R[6] | {8{Rout[7]}} & R[7];
+	assign BusWires = ({8{Rout[0]}} & R[0]) | ({8{Rout[1]}} & R[1]) | ({8{Rout[2]}} & R[2]) | ({8{Rout[3]}} & R[3])
+	 | ({8{Rout[4]}} & R[4]) | ({8{Rout[5]}} & R[5]) | ({8{Rout[6]}} & R[6]) | ({8{Rout[7]}} & R[7]);
 endmodule
