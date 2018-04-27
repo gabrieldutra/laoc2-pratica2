@@ -4,7 +4,8 @@ module upcount(
 	Q
 	);
 	input Clear, Clock;
-	output reg [1:0] Q = 2'b00;
+	output [1:0] Q;
+	reg [1:0] Q;
 	always @(posedge Clock)
 	if (Clear)
 	Q <= 2'b0;
